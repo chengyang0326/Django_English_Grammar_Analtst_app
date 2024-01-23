@@ -1,0 +1,26 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: chengyang0326@gmail.com
+Date: Tue, 26 Apr 2022 23:29:59 -0000
+Message-ID: 
+ <165101579982.5244.10329690323872808652@cheng-yangdeMacBook-Pro.local>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/reset/Mg/b4ih9z-06ef3060f055380dadd658f042b3dd56/
+
+Your username, in case you’ve forgotten: chengyang
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+
+-------------------------------------------------------------------------------

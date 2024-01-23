@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+<p>  sentence:
+	{{pos.sentence}}
+	<br>
+	noun:
+	{{pos.noun}}
+
+	<br>
+	verb:
+	{{pos.verb}}
+
+	<br>
+	article:
+	 {{pos.article}}
+	 <br>
+	 proposition:
+	 {{pos.proposition}}
+	 <br>
+	 pronoun:
+	 {{pos.pronoun}}
+	 <br>
+	 space:
+	 {{pos.space}}
+	 <br>
+	 adjective:
+	 {{pos.adjective}}
+	 <br>
+	 adverb:
+	 {{pos.adverb}}
+	 <br>
+	 question word:
+	 {{pos.Question_word}}
+	 <br>
+	 punctation:
+	 {{pos.punctation}}
+
+
+</p>
+
+
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+ <div class="container">
+
+  <h2>Parts of Speech Counter</h2>
+
+  <div>
+    <canvas id="myChart"  width="600" height="300"></canvas>
+  </div>
+
+  </div>
+  <script>
+    var ctx = document.getElementById("myChart").getContext("2d");
+    var chart = new Chart(ctx, {
+      // The type of chart we want to create
+      type: "bar",
+    
+      // The data for our dataset
+      data: {
+        labels: ["sentence", "noun", "verb", "proposition", "pronoun","article","space","adjective","adverb","question_word","punctation"],
+        datasets: [
+          {
+            label:"Count",
+            backgroundColor: "rgb(255, 99, 132)",
+            borderColor: "rgba(153,255,51,0.4)",
+            data: [{{pos.sentence}}, {{pos.noun}}, {{pos.verb}}, {{pos.proposition}}, {{pos.pronoun}},{{pos.article}},{{pos.space}},{{pos.adjective}},{{pos.adverb}},{{pos.Question_word}},{{pos.punctation}}]
+          }
+        ]
+      },
+    
+      // Configuration options go here
+      options: {
+      
+      }
+    });
+  </script>
+
+
+{% endblock %}
