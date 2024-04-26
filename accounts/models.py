@@ -6,12 +6,22 @@ from django.conf import settings
 class Sentences(models.Model):
 	text = models.TextField(blank=True,null=True)
 
+	def __str__(self):
+		model_name = self.__class__.__name__
+		fields_str = ", ".join((f"{field.name}={getattr(self, field.name)}" for field in self._meta.fields))
+		return f"{model_name}({fields_str})"
+
 
 
 
 class UserRegistrationModel(models.Model):
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+
+    def __str__(self):
+    	model_name = self.__class__.__name__
+    	fields_str = ", ".join((f"{field.name}={getattr(self, field.name)}" for field in self._meta.fields))
+    	return f"{model_name}({fields_str})"
 
 class Document(models.Model):
 	description = models.CharField(max_length=255, blank=True)
@@ -34,3 +44,8 @@ class POS(models.Model):
 	pronoun = models.DecimalField(decimal_places=2,max_digits=1000)
 	Question_word = models.DecimalField(decimal_places=2,max_digits=1000)
 	punctation = models.DecimalField(decimal_places=2,max_digits=1000)
+
+	def __str__(self):
+		model_name = self.__class__.__name__
+		fields_str = ", ".join((f"{field.name}={getattr(self, field.name)}" for field in self._meta.fields))
+		return f"{model_name}({fields_str})"
